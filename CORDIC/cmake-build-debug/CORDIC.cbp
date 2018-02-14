@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CORDIC"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CORDIC">
+				<Option output="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/CORDIC.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/backward"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include-fixed"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CORDIC"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CORDIC/fast">
+				<Option output="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/CORDIC.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/backward"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include-fixed"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CORDIC/fast"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/Documents/Cpp Projects/CORDIC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/Documents/Cpp Projects/CORDIC/cordic.cpp">
+			<Option target="CORDIC"/>
+		</Unit>
+		<Unit filename="E:/Documents/Cpp Projects/CORDIC/cordic.h">
+			<Option target="CORDIC"/>
+		</Unit>
+		<Unit filename="E:/Documents/Cpp Projects/CORDIC/cordic_prb.cpp">
+			<Option target="CORDIC"/>
+		</Unit>
+		<Unit filename="E:/Documents/Cpp Projects/CORDIC/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
