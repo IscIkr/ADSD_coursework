@@ -2,6 +2,7 @@
 #include "cordic.h"
 #include "dot_p.h"
 #include <math.h>
+#define ITERATIONS 10
 
 #include <iostream>
 //int iteration = 0;
@@ -12,7 +13,6 @@ int classifier (
     double b
     )
 {
-
     double f, dp, cosh, sinh, tanh_res;
     double sum = 0;
     int i;
@@ -20,7 +20,7 @@ int classifier (
 //iteration++;
     for ( i = 0 ; i < NSV ; i++) {
         dot_p(&dp, sv[i], x);
-        coshsinh_cordic(2*dp, 20, &cosh, &sinh);
+        coshsinh_cordic(2*dp, ITERATIONS, &cosh, &sinh);
         tanh_res = sinh/cosh;
         //tanh_res = tanh(2*dp);
         sum += a[i] * tanh_res;
