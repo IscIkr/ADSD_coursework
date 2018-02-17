@@ -1613,11 +1613,22 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh )
 //    where K(i) = 1 / sqrt ( 1 + (1/2)^(2i) ).
 //
 {
-# define ANGLES_LENGTH 60
-# define KPROD_LENGTH 33
+# define ANGLES_POS_LENGTH 60
+# define ANGLES_NEG_LENGTH 11
 
-    double angle;
-    double angles[ANGLES_LENGTH] = {
+	double angles_neg[ANGLES_NEG_LENGTH] = {
+	    0.9730,
+	    1.3540,
+	    1.7170,
+	    2.0716,
+	    2.4221,
+	    2.7706,
+	    3.1182,
+	    3.4652,
+	    3.8121,
+	    4.1588,
+	    4.5054};
+    double angles_pos[ANGLES_POS_LENGTH] = {
             0.5493,
             0.2554,
             0.1257,
@@ -1677,101 +1688,61 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh )
             6.9389e-18,
             3.4694e-18,
             1.7347e-18};
-    double c2;
-    double factor;
-    int j;
-    /*double kprod[KPROD_LENGTH] = {
-            0.70710678118654752440,
-            0.63245553203367586640,
-            0.61357199107789634961,
-            0.60883391251775242102,
-            0.60764825625616820093,
-            0.60735177014129595905,
-            0.60727764409352599905,
-            0.60725911229889273006,
-            0.60725447933256232972,
-            0.60725332108987516334,
-            0.60725303152913433540,
-            0.60725295913894481363,
-            0.60725294104139716351,
-            0.60725293651701023413,
-            0.60725293538591350073,
-            0.60725293510313931731,
-            0.60725293503244577146,
-            0.60725293501477238499,
-            0.60725293501035403837,
-            0.60725293500924945172,
-            0.60725293500897330506,
-            0.60725293500890426839,
-            0.60725293500888700922,
-            0.60725293500888269443,
-            0.60725293500888161574,
-            0.60725293500888134606,
-            0.60725293500888127864,
-            0.60725293500888126179,
-            0.60725293500888125757,
-            0.60725293500888125652,
-            0.60725293500888125626,
-            0.60725293500888125619,
-            0.60725293500888125617 };kprod [ i4_min ( n, KPROD_LENGTH ) - 1 ]*/
-    double pi = 3.141592653589793;
-    double poweroftwo;
-    double s2;
-    double sigma;
-    double sign_factor;
-    double theta;
-    double kn = 1.20513; //vectors' length product in the hyperbolic case
-//
-//  Shift angle to interval [-pi,pi]. No need for our tests
-//
-//    theta = angle_shift ( beta, -pi );
-//
+    double angle, c2, s2, factor, poweroftwo, sigma, sign_factor;
+    int    j;
+//  double pi = 3.141592653589793;
+//  double theta;
+//  double kn = 1.20513; //vectors' length product in the hyperbolic case
+
+//  theta = angle_shift ( beta, -pi );    //Shift angle to interval [-pi,pi]. No need for our tests
+
 //  Shift angle to interval [-pi/3,pi/3] degrees and account for signs.
 //  because it is the limit of our approximation for now
-//
-    if ( beta < -pi )
-    {
-        *ch = 1;
-        *sh = -*ch; //of course it is not the case in reality but just concerning our 1% precision if above pi then tanh() = 1
-        return;
-    }
-    else if ( pi < beta )
-    {
-        *ch = 1;
-        *sh = *ch;
-        return;
-    }
 
-    if ( beta < 0 )
-    {
-        //beta = -beta;
-        sign_factor = -1.0;
-    }
-    else if ( 0 < beta )
-    {
-        sign_factor = 1.0;
-    }
-//
-//  Initialize loop variables:
-//
-    *ch = 1; //this is the same as v in the Wikipedia page https://fr.wikipedia.org/wiki/CORDIC (in French but can understand the math)
-    *sh = 0;
+//    if ( beta < -pi ) {
+//        *ch = 1;        //of course it is not the case in reality but just
+//        *sh = -*ch;     //concerning our 1% precision if above pi then tanh() = 1
+//        return;
+//    }
+//    else if ( pi < beta ) {
+//        *ch = 1;
+//        *sh = *ch;
+//        return;
+//    }
 
-    poweroftwo = 0.5;
-    angle = angles[0];
-//
-//  Iterations
-//
-    for ( j = 1; j <= n; j++ )
-    {
-        if ( beta < 0.0 )
-        {
-            sigma = -1.0;
-        }
-        else
-        {
-            sigma = 1.0;
-        }
+    if ( beta < 0 ) sign_factor = -1.0;
+    else            sign_factor =  1.0;
+
+    *ch = 1;    //Initialize loop variables:
+    *sh = 0;    //https://fr.wikipedia.org/wiki/CORDIC
+
+    poweroftwo = pow(2,-4-2);
+
+    for ( j = -4; j <= 0; j++ ) {
+
+		angle = angles_neg[-j];
+
+		if ( beta < 0.0 ) sigma = -1.0;
+        else              sigma =  1.0;
+
+        factor = sigma * (1 - poweroftwo);
+
+        c2 =          *ch + factor * *sh;
+        s2 = factor * *ch +          *sh;
+
+        *ch = c2;
+        *sh = s2;
+
+        beta = beta - sigma * angle;    //Update the remaining angle.
+		poweroftwo = poweroftwo * 2.0;
+	}
+
+	angle = angles_pos[0];
+
+	for ( j = 1; j <= n; j++ ) {    //  Iterations
+
+        if ( beta < 0.0 ) sigma = -1.0;
+        else              sigma =  1.0;
 
         factor = sigma * poweroftwo;
 
@@ -1780,70 +1751,42 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh )
 
         *ch = c2;
         *sh = s2;
-//
-//  Update the remaining angle.
-//
-        beta = beta - sigma * angle;
 
-        poweroftwo = poweroftwo / 2.0;
-//
-//  Update the angle from table, or eventually by just dividing by two.
-//
-        if ( ANGLES_LENGTH < j + 1 )
-        {
-            angle = angle / 2.0;
-        }
-        else
-        {
-            angle = angles[j];
-        }
+        beta = beta - sigma * angle;    //Update the remaining angle.
 
-        if(j==4 || j==13 || j==40){
-            if(beta < 0){
-                sigma = -1;
-            } else {
-                sigma = 1;
-            }
+        if( j == 4 || j == 13 || j == 40) {
+
+            if ( beta < 0.0 ) sigma = -1.0;
+            else              sigma =  1.0;
+
             factor = sigma * poweroftwo;
+
             c2 =          *ch + factor * *sh;
             s2 = factor * *ch +          *sh;
 
             *ch = c2;
             *sh = s2;
 
-            if ( ANGLES_LENGTH < j + 1 )
-            {
-                angle = angle / 2.0;
-            }
-            else
-            {
-                angle = angles[j];
-            }
+            beta = beta - sigma * angle;    //Update the remaining angle.
         }
 
+        poweroftwo = poweroftwo / 2.0;
+
+        if ( ANGLES_POS_LENGTH < j + 1 ) angle = angle / 2.0;   //Update the angle from table,
+        else                         angle = angles_pos[j];     //or eventually by dividing by two.
     }
 
-//
-//  Adjust length of output vector to be [cos(beta), sin(beta)]
-//
-//  KPROD is essentially constant after a certain point, so if N is
-//  large, just take the last available value.
-//
-    if ( 0 < n )
-    {
-        *ch = *ch * kn;
-        *sh = *sh * kn;
-    }
-//
-//  Adjust for possible sign change because angle was originally
-//  not in quadrant 1 or 4.
-//
-    *ch = sign_factor * *ch;
-    *sh = sign_factor * *sh;
+//    if ( 0 < n ) {
+//        *ch = *ch * kn;   //Adjust length of output vector to be [cos(beta), sin(beta)]
+//        *sh = *sh * kn;
+//    }
+
+    *ch = sign_factor * *ch;    //Adjust for possible sign change because
+    *sh = sign_factor * *sh;    //angle was originally not in quadrant 1 or 4.
 
     return;
-# undef ANGLES_LENGTH
-# undef KPROD_LENGTH
+# undef ANGLES_POS_LENGTH
+# undef ANGLES_NEG_LENGTH
 }
 //****************************************************************************80
 

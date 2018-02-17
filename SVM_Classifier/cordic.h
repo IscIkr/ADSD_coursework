@@ -4,6 +4,6 @@
 #ifndef CORDIC_CORDIC_H
 #define CORDIC_CORDIC_H
 
-void coshsinh_cordic ( double beta, int n, double *c, double *s );
+void coshsinh_cordic ( double beta, int m, int n, double *c, double *s );
 
 #endif

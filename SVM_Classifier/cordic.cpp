@@ -11,11 +11,24 @@ using namespace std;
 
 # include "cordic.h"
 
-void coshsinh_cordic ( double beta, int n, double *ch, double *sh ) {
+void coshsinh_cordic ( double beta, int m, int n, double *ch, double *sh ) {
 
-# define ANGLES_LENGTH 60
+# define ANGLES_POS_LENGTH 60
+# define ANGLES_NEG_LENGTH 11
 
-    double angles[ANGLES_LENGTH] = {
+	double angles_neg[ANGLES_NEG_LENGTH] = {
+	    0.9730,
+	    1.3540,
+	    1.7170,
+	    2.0716,
+	    2.4221,
+	    2.7706,
+	    3.1182,
+	    3.4652,
+	    3.8121,
+	    4.1588,
+	    4.5054};
+    double angles_pos[ANGLES_POS_LENGTH] = {
             0.5493,
             0.2554,
             0.1257,
@@ -77,7 +90,7 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh ) {
             1.7347e-18};
     double angle, c2, s2, factor, poweroftwo, sigma, sign_factor;
     int    j;
-    double pi = 3.141592653589793;
+//  double pi = 3.141592653589793;
 //  double theta;
 //  double kn = 1.20513; //vectors' length product in the hyperbolic case
 
@@ -86,16 +99,16 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh ) {
 //  Shift angle to interval [-pi/3,pi/3] degrees and account for signs.
 //  because it is the limit of our approximation for now
 
-    if ( beta < -pi ) {
-        *ch = 1;        //of course it is not the case in reality but just
-        *sh = -*ch;     //concerning our 1% precision if above pi then tanh() = 1
-        return;
-    }
-    else if ( pi < beta ) {
-        *ch = 1;
-        *sh = *ch;
-        return;
-    }
+//    if ( beta < -pi ) {
+//        *ch = 1;        //of course it is not the case in reality but just
+//        *sh = -*ch;     //concerning our 1% precision if above pi then tanh() = 1
+//        return;
+//    }
+//    else if ( pi < beta ) {
+//        *ch = 1;
+//        *sh = *ch;
+//        return;
+//    }
 
     if ( beta < 0 ) sign_factor = -1.0;
     else            sign_factor =  1.0;
@@ -103,10 +116,30 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh ) {
     *ch = 1;    //Initialize loop variables:
     *sh = 0;    //https://fr.wikipedia.org/wiki/CORDIC
 
-    poweroftwo = 0.5;
-    angle = angles[0];
+    poweroftwo = pow(2,-m-2);
 
-    for ( j = 1; j <= n; j++ ) {    //  Iterations
+    for ( j = -m; j <= 0; j++ ) {
+
+		angle = angles_neg[-j];
+
+		if ( beta < 0.0 ) sigma = -1.0;
+        else              sigma =  1.0;
+
+        factor = sigma * (1 - poweroftwo);
+
+        c2 =          *ch + factor * *sh;
+        s2 = factor * *ch +          *sh;
+
+        *ch = c2;
+        *sh = s2;
+
+        beta = beta - sigma * angle;    //Update the remaining angle.
+		poweroftwo = poweroftwo * 2.0;
+	}
+
+	angle = angles_pos[0];
+
+	for ( j = 1; j <= n; j++ ) {    //  Iterations
 
         if ( beta < 0.0 ) sigma = -1.0;
         else              sigma =  1.0;
@@ -139,8 +172,8 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh ) {
 
         poweroftwo = poweroftwo / 2.0;
 
-        if ( ANGLES_LENGTH < j + 1 ) angle = angle / 2.0;   //Update the angle from table,
-        else                         angle = angles[j];     //or eventually by dividing by two.
+        if ( ANGLES_POS_LENGTH < j + 1 ) angle = angle / 2.0;   //Update the angle from table,
+        else                         angle = angles_pos[j];     //or eventually by dividing by two.
     }
 
 //    if ( 0 < n ) {
@@ -152,7 +185,8 @@ void coshsinh_cordic ( double beta, int n, double *ch, double *sh ) {
     *sh = sign_factor * *sh;    //angle was originally not in quadrant 1 or 4.
 
     return;
-# undef ANGLES_LENGTH
+# undef ANGLES_POS_LENGTH
+# undef ANGLES_NEG_LENGTH
 }
 
 //****************************************************************************80

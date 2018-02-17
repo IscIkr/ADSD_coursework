@@ -13,7 +13,7 @@
 int main () {
 
     int     i, j, error = 0;  //flag used to compare to the results
-//int     test_ones = 0, out_ones=0;
+//int     test_ones = 0, out_ones=0, common = 0;
     double  x[N], sv[NSV][N];
     int     out[SAMPLES];
 
@@ -32,6 +32,7 @@ int main () {
         out[i] = classifier(alpha, sv, x, bias);
 //fprintf(fpout,"%d\n",out[i]); //debugging: check output (1/0)
         if (out[i] != testDataLabel[i]) error++;
+//if (out[i] == testDataLabel[i] && out[i] == 1) common++;
 //if (testDataLabel[i] == 1) test_ones++;
 //if (out[i] == 1) out_ones++;
     }
@@ -43,6 +44,7 @@ int main () {
     fprintf(stdout, "**************************************\n");
     fprintf(stdout, "The classification error rate is %.2f%%\n", 100*(double)error/SAMPLES);
     fprintf(stdout, "**************************************\n");
+//fprintf(stdout, "The common ones are %d\n", common);
     return 0;
 
 }
