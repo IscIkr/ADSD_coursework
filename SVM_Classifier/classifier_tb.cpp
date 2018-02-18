@@ -23,28 +23,33 @@ int main () {
         }
     }
 
-//FILE    *fpout; //debugging
-//fpout=fopen("out.h","w"); //debugging
+    FILE    *fpout; //debugging
+    fpout=fopen("out.h","w"); //debugging
 
     for (i=0;i<SAMPLES;i++) {
         memcpy(x, testData+i*N, N*sizeof(double));
 //for (j=0;j<N;j++) printf("%d: x[%d] = %f\n", i*N + j, j, x[j]); //debugging: check if x is ok
         out[i] = classifier(alpha, sv, x, bias);
-//fprintf(fpout,"%d\n",out[i]); //debugging: check output (1/0)
+        fprintf(fpout,"%d\n",out[i]); //debugging: check output (1/0)
         if (out[i] != testDataLabel[i]) error++;
 //if (out[i] == testDataLabel[i] && out[i] == 1) common++;
 //if (testDataLabel[i] == 1) test_ones++;
 //if (out[i] == 1) out_ones++;
     }
+
+    fclose(fpout); //debugging
+
 //printf("Given tanh:\n");
 //printf("CORDIC tanh:\n");
 //printf("#Test_Ones = %d. Percentage = %.5f\%\n\n", test_ones, 100*(double)test_ones/SAMPLES);
 
-    fprintf(stdout, "Comparing result against golden output\n");
+    fprintf(stdout, "Comparing result against golden output\n\n");
+    if (system("fc out.h out_tanh.h >NUL")==0) fprintf(stdout, "CORDIC and TANH output files are identical!\n\n");
+    else                                       fprintf(stdout, "CORDIC and TANH output files do not match!\n\n");
     fprintf(stdout, "**************************************\n");
     fprintf(stdout, "The classification error rate is %.2f%%\n", 100*(double)error/SAMPLES);
     fprintf(stdout, "**************************************\n");
+
 //fprintf(stdout, "The common ones are %d\n", common);
     return 0;
-
 }
