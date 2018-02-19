@@ -1,3 +1,0 @@
-E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/CMakeFiles/CORDIC.dir
-E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Documents/Cpp Projects/CORDIC/cmake-build-debug/CMakeFiles/rebuild_cache.dir

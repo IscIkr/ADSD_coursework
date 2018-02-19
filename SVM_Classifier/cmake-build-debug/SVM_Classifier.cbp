@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SVM_Classifier"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SVM_Classifier">
+				<Option output="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/SVM_Classifier.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/backward"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include-fixed"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 SVM_Classifier"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SVM_Classifier/fast">
+				<Option output="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/SVM_Classifier.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/backward"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/include-fixed"/>
+					<Add directory="E:/Logiciels/CLion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 SVM_Classifier/fast"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Logiciels/CLion/mingw64/bin/mingw32-make.exe -f &quot;E:/Documents/CppProjects/ADSD/SVM_Classifier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/SV.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/alpha.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/classifier.cpp">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/classifier.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/classifier_tb.cpp">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/cordic.cpp">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/cordic.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/dot_p.cpp">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/dot_p.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/out_tanh.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/testData.h">
+			<Option target="SVM_Classifier"/>
+		</Unit>
+		<Unit filename="E:/Documents/CppProjects/ADSD/SVM_Classifier/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

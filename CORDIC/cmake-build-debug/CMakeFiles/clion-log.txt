@@ -1,4 +1,0 @@
-"E:\Logiciels\CLion\CLion 2017.2.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "E:\Documents\Cpp Projects\CORDIC"
--- Configuring done
--- Generating done
--- Build files have been written to: E:/Documents/Cpp Projects/CORDIC/cmake-build-debug

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Documents/CppProjects/ADSD/CORDIC_TEST_VERSION/cordic_t.cpp
+cstdlib
+-
+iostream
+-
+iomanip
+-
+cmath
+-
+ctime
+-
+cordic_t.h
+E:/Documents/CppProjects/ADSD/CORDIC_TEST_VERSION/cordic_t.h
+
+E:/Documents/CppProjects/ADSD/CORDIC_TEST_VERSION/cordic_t.h
+
+E:/Documents/CppProjects/ADSD/CORDIC_TEST_VERSION/cordic_t_prb.cpp
+cstdlib
+-
+iostream
+-
+iomanip
+-
+cmath
+-
+stdio.h
+-
+cordic_t.h
+E:/Documents/CppProjects/ADSD/CORDIC_TEST_VERSION/cordic_t.h
+
