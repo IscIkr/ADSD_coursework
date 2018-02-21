@@ -1,11 +1,11 @@
 #include "classifier.h"
 #include "cordic.h"
 #include "dot_p.h"
-#include <math.h>
 #define POS_ITERATIONS 10
 #define NEG_ITERATIONS 2   //max value 10
 
-#include <iostream>
+//#include <math.h>  //for tanh function
+//#include <iostream>
 //int iteration = 0;
 int classifier (
     double a[NSV],

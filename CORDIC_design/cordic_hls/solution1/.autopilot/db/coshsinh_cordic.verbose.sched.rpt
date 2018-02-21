@@ -1,0 +1,1119 @@
+
+
+================================================================
+== Vivado HLS Report for 'coshsinh_cordic'
+================================================================
+* Date:           Wed Feb 21 03:23:11 2018
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        cordic_hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.23|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|        22|          -|          -|     ?|    no    |
+        |- Loop 2  |    ?|    ?|        31|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 59
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (tmp_3)
+	24  / (!tmp_3)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	2  / true
+24 --> 
+	25  / (!tmp_8)
+	55  / (tmp_8)
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	24  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+* FSM state operations: 
+
+ <State 1>: 8.20ns
+ST_1: stg_60 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(double %beta) nounwind, !map !0
+
+ST_1: stg_61 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32 %m) nounwind, !map !6
+
+ST_1: stg_62 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32 %n) nounwind, !map !10
+
+ST_1: stg_63 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(double* %ch) nounwind, !map !14
+
+ST_1: stg_64 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(double* %sh) nounwind, !map !20
+
+ST_1: stg_65 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecTopModule([16 x i8]* @coshsinh_cordic_str) nounwind
+
+ST_1: n_read [1/1] 0.00ns
+:6  %n_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %n) nounwind
+
+ST_1: m_read [1/1] 0.00ns
+:7  %m_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %m) nounwind
+
+ST_1: beta_read [1/1] 0.00ns
+:8  %beta_read = call double @_ssdm_op_Read.ap_auto.double(double %beta) nounwind
+
+ST_1: beta_to_int [1/1] 0.00ns
+:9  %beta_to_int = bitcast double %beta_read to i64
+
+ST_1: tmp [1/1] 0.00ns
+:10  %tmp = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %beta_to_int, i32 52, i32 62)
+
+ST_1: tmp_6 [1/1] 0.00ns
+:11  %tmp_6 = trunc i64 %beta_to_int to i52
+
+ST_1: notlhs [1/1] 2.11ns
+:12  %notlhs = icmp ne i11 %tmp, -1
+
+ST_1: notrhs [1/1] 2.64ns
+:13  %notrhs = icmp eq i52 %tmp_6, 0
+
+ST_1: tmp_12 [1/1] 0.00ns (grouped into LUT with out node sign_factor)
+:14  %tmp_12 = or i1 %notrhs, %notlhs
+
+ST_1: tmp_16 [1/1] 6.82ns
+:15  %tmp_16 = fcmp olt double %beta_read, 0.000000e+00
+
+ST_1: tmp_20 [1/1] 0.00ns (grouped into LUT with out node sign_factor)
+:16  %tmp_20 = and i1 %tmp_12, %tmp_16
+
+ST_1: sign_factor [1/1] 1.37ns (out node of the LUT)
+:17  %sign_factor = select i1 %tmp_20, double -1.000000e+00, double 1.000000e+00
+
+ST_1: j [1/1] 2.44ns
+:18  %j = sub nsw i32 0, %m_read
+
+ST_1: stg_79 [1/1] 1.57ns
+:19  br label %1
+
+
+ <State 2>: 8.23ns
+ST_2: ch_load [1/1] 0.00ns
+:0  %ch_load = phi double [ 1.000000e+00, %0 ], [ %c2, %2 ]
+
+ST_2: tmp_2 [1/1] 0.00ns
+:1  %tmp_2 = phi double [ 0.000000e+00, %0 ], [ %s2, %2 ]
+
+ST_2: poweroftwo [1/1] 0.00ns
+:2  %poweroftwo = phi double [ 6.250000e-02, %0 ], [ %poweroftwo_2, %2 ]
+
+ST_2: j1 [1/1] 0.00ns
+:3  %j1 = phi i32 [ %j, %0 ], [ %j_2, %2 ]
+
+ST_2: p_0 [1/1] 0.00ns
+:4  %p_0 = phi double [ %beta_read, %0 ], [ %beta_assign, %2 ]
+
+ST_2: tmp_3 [1/1] 2.52ns
+:5  %tmp_3 = icmp slt i32 %j1, 1
+
+ST_2: stg_86 [1/1] 1.57ns
+:6  br i1 %tmp_3, label %2, label %.backedge
+
+ST_2: tmp_4 [1/1] 2.44ns
+:0  %tmp_4 = sub nsw i32 0, %j1
+
+ST_2: tmp_5 [1/1] 0.00ns
+:1  %tmp_5 = sext i32 %tmp_4 to i64
+
+ST_2: angles_neg_addr [1/1] 0.00ns
+:2  %angles_neg_addr = getelementptr inbounds [11 x double]* @angles_neg, i64 0, i64 %tmp_5
+
+ST_2: angle [2/2] 2.39ns
+:3  %angle = load double* %angles_neg_addr, align 8
+
+ST_2: tmp_7 [5/5] 8.23ns
+:13  %tmp_7 = fsub double 1.000000e+00, %poweroftwo
+
+ST_2: j_2 [1/1] 2.44ns
+:22  %j_2 = add nsw i32 1, %j1
+
+
+ <State 3>: 8.23ns
+ST_3: angle [1/2] 2.39ns
+:3  %angle = load double* %angles_neg_addr, align 8
+
+ST_3: p_0_to_int [1/1] 0.00ns
+:4  %p_0_to_int = bitcast double %p_0 to i64
+
+ST_3: tmp_23 [1/1] 0.00ns
+:5  %tmp_23 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %p_0_to_int, i32 52, i32 62)
+
+ST_3: tmp_24 [1/1] 0.00ns
+:6  %tmp_24 = trunc i64 %p_0_to_int to i52
+
+ST_3: notlhs1 [1/1] 2.11ns
+:7  %notlhs1 = icmp ne i11 %tmp_23, -1
+
+ST_3: notrhs1 [1/1] 2.64ns
+:8  %notrhs1 = icmp eq i52 %tmp_24, 0
+
+ST_3: tmp_25 [1/1] 0.00ns (grouped into LUT with out node sigma)
+:9  %tmp_25 = or i1 %notrhs1, %notlhs1
+
+ST_3: tmp_26 [1/1] 6.82ns
+:10  %tmp_26 = fcmp olt double %p_0, 0.000000e+00
+
+ST_3: tmp_27 [1/1] 0.00ns (grouped into LUT with out node sigma)
+:11  %tmp_27 = and i1 %tmp_25, %tmp_26
+
+ST_3: sigma [1/1] 1.37ns (out node of the LUT)
+:12  %sigma = select i1 %tmp_27, double -1.000000e+00, double 1.000000e+00
+
+ST_3: tmp_7 [4/5] 8.23ns
+:13  %tmp_7 = fsub double 1.000000e+00, %poweroftwo
+
+ST_3: poweroftwo_2 [6/6] 7.79ns
+:21  %poweroftwo_2 = fmul double %poweroftwo, 2.000000e+00
+
+
+ <State 4>: 8.23ns
+ST_4: tmp_7 [3/5] 8.23ns
+:13  %tmp_7 = fsub double 1.000000e+00, %poweroftwo
+
+ST_4: tmp_1 [6/6] 7.79ns
+:19  %tmp_1 = fmul double %sigma, %angle
+
+ST_4: poweroftwo_2 [5/6] 7.79ns
+:21  %poweroftwo_2 = fmul double %poweroftwo, 2.000000e+00
+
+
+ <State 5>: 8.23ns
+ST_5: tmp_7 [2/5] 8.23ns
+:13  %tmp_7 = fsub double 1.000000e+00, %poweroftwo
+
+ST_5: tmp_1 [5/6] 7.79ns
+:19  %tmp_1 = fmul double %sigma, %angle
+
+ST_5: poweroftwo_2 [4/6] 7.79ns
+:21  %poweroftwo_2 = fmul double %poweroftwo, 2.000000e+00
+
+
+ <State 6>: 8.23ns
+ST_6: tmp_7 [1/5] 8.23ns
+:13  %tmp_7 = fsub double 1.000000e+00, %poweroftwo
+
+ST_6: tmp_1 [4/6] 7.79ns
+:19  %tmp_1 = fmul double %sigma, %angle
+
+ST_6: poweroftwo_2 [3/6] 7.79ns
+:21  %poweroftwo_2 = fmul double %poweroftwo, 2.000000e+00
+
+
+ <State 7>: 7.79ns
+ST_7: factor [6/6] 7.79ns
+:14  %factor = fmul double %sigma, %tmp_7
+
+ST_7: tmp_1 [3/6] 7.79ns
+:19  %tmp_1 = fmul double %sigma, %angle
+
+ST_7: poweroftwo_2 [2/6] 7.79ns
+:21  %poweroftwo_2 = fmul double %poweroftwo, 2.000000e+00
+
+
+ <State 8>: 7.79ns
+ST_8: factor [5/6] 7.79ns
+:14  %factor = fmul double %sigma, %tmp_7
+
+ST_8: tmp_1 [2/6] 7.79ns
+:19  %tmp_1 = fmul double %sigma, %angle
+
+ST_8: poweroftwo_2 [1/6] 7.79ns
+:21  %poweroftwo_2 = fmul double %poweroftwo, 2.000000e+00
+
+
+ <State 9>: 7.79ns
+ST_9: factor [4/6] 7.79ns
+:14  %factor = fmul double %sigma, %tmp_7
+
+ST_9: tmp_1 [1/6] 7.79ns
+:19  %tmp_1 = fmul double %sigma, %angle
+
+
+ <State 10>: 8.23ns
+ST_10: factor [3/6] 7.79ns
+:14  %factor = fmul double %sigma, %tmp_7
+
+ST_10: beta_assign [5/5] 8.23ns
+:20  %beta_assign = fsub double %p_0, %tmp_1
+
+
+ <State 11>: 8.23ns
+ST_11: factor [2/6] 7.79ns
+:14  %factor = fmul double %sigma, %tmp_7
+
+ST_11: beta_assign [4/5] 8.23ns
+:20  %beta_assign = fsub double %p_0, %tmp_1
+
+
+ <State 12>: 8.23ns
+ST_12: factor [1/6] 7.79ns
+:14  %factor = fmul double %sigma, %tmp_7
+
+ST_12: beta_assign [3/5] 8.23ns
+:20  %beta_assign = fsub double %p_0, %tmp_1
+
+
+ <State 13>: 8.23ns
+ST_13: tmp_9 [6/6] 7.79ns
+:15  %tmp_9 = fmul double %factor, %tmp_2
+
+ST_13: tmp_s [6/6] 7.79ns
+:17  %tmp_s = fmul double %factor, %ch_load
+
+ST_13: beta_assign [2/5] 8.23ns
+:20  %beta_assign = fsub double %p_0, %tmp_1
+
+
+ <State 14>: 8.23ns
+ST_14: tmp_9 [5/6] 7.79ns
+:15  %tmp_9 = fmul double %factor, %tmp_2
+
+ST_14: tmp_s [5/6] 7.79ns
+:17  %tmp_s = fmul double %factor, %ch_load
+
+ST_14: beta_assign [1/5] 8.23ns
+:20  %beta_assign = fsub double %p_0, %tmp_1
+
+
+ <State 15>: 7.79ns
+ST_15: tmp_9 [4/6] 7.79ns
+:15  %tmp_9 = fmul double %factor, %tmp_2
+
+ST_15: tmp_s [4/6] 7.79ns
+:17  %tmp_s = fmul double %factor, %ch_load
+
+
+ <State 16>: 7.79ns
+ST_16: tmp_9 [3/6] 7.79ns
+:15  %tmp_9 = fmul double %factor, %tmp_2
+
+ST_16: tmp_s [3/6] 7.79ns
+:17  %tmp_s = fmul double %factor, %ch_load
+
+
+ <State 17>: 7.79ns
+ST_17: tmp_9 [2/6] 7.79ns
+:15  %tmp_9 = fmul double %factor, %tmp_2
+
+ST_17: tmp_s [2/6] 7.79ns
+:17  %tmp_s = fmul double %factor, %ch_load
+
+
+ <State 18>: 7.79ns
+ST_18: tmp_9 [1/6] 7.79ns
+:15  %tmp_9 = fmul double %factor, %tmp_2
+
+ST_18: tmp_s [1/6] 7.79ns
+:17  %tmp_s = fmul double %factor, %ch_load
+
+
+ <State 19>: 8.23ns
+ST_19: c2 [5/5] 8.23ns
+:16  %c2 = fadd double %ch_load, %tmp_9
+
+ST_19: s2 [5/5] 8.23ns
+:18  %s2 = fadd double %tmp_s, %tmp_2
+
+
+ <State 20>: 8.23ns
+ST_20: c2 [4/5] 8.23ns
+:16  %c2 = fadd double %ch_load, %tmp_9
+
+ST_20: s2 [4/5] 8.23ns
+:18  %s2 = fadd double %tmp_s, %tmp_2
+
+
+ <State 21>: 8.23ns
+ST_21: c2 [3/5] 8.23ns
+:16  %c2 = fadd double %ch_load, %tmp_9
+
+ST_21: s2 [3/5] 8.23ns
+:18  %s2 = fadd double %tmp_s, %tmp_2
+
+
+ <State 22>: 8.23ns
+ST_22: c2 [2/5] 8.23ns
+:16  %c2 = fadd double %ch_load, %tmp_9
+
+ST_22: s2 [2/5] 8.23ns
+:18  %s2 = fadd double %tmp_s, %tmp_2
+
+
+ <State 23>: 8.23ns
+ST_23: c2 [1/5] 8.23ns
+:16  %c2 = fadd double %ch_load, %tmp_9
+
+ST_23: s2 [1/5] 8.23ns
+:18  %s2 = fadd double %tmp_s, %tmp_2
+
+ST_23: stg_152 [1/1] 0.00ns
+:23  br label %1
+
+
+ <State 24>: 8.20ns
+ST_24: ch_load_2 [1/1] 0.00ns
+.backedge:0  %ch_load_2 = phi double [ %c2_3, %_ifconv ], [ %ch_load, %1 ]
+
+ST_24: sh_load [1/1] 0.00ns
+.backedge:1  %sh_load = phi double [ %s2_3, %_ifconv ], [ %tmp_2, %1 ]
+
+ST_24: angle1 [1/1] 0.00ns
+.backedge:2  %angle1 = phi double [ %angle_3, %_ifconv ], [ 5.493000e-01, %1 ]
+
+ST_24: poweroftwo_1 [1/1] 0.00ns
+.backedge:3  %poweroftwo_1 = phi double [ %poweroftwo_3, %_ifconv ], [ %poweroftwo, %1 ]
+
+ST_24: j_1 [1/1] 0.00ns
+.backedge:4  %j_1 = phi i32 [ %j_3, %_ifconv ], [ 1, %1 ]
+
+ST_24: p_1 [1/1] 0.00ns
+.backedge:5  %p_1 = phi double [ %beta_assign_3, %_ifconv ], [ %p_0, %1 ]
+
+ST_24: tmp_8 [1/1] 2.52ns
+.backedge:6  %tmp_8 = icmp sgt i32 %j_1, %n_read
+
+ST_24: stg_160 [1/1] 0.00ns
+.backedge:7  br i1 %tmp_8, label %3, label %_ifconv
+
+ST_24: p_1_to_int [1/1] 0.00ns
+_ifconv:0  %p_1_to_int = bitcast double %p_1 to i64
+
+ST_24: tmp_28 [1/1] 0.00ns
+_ifconv:1  %tmp_28 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %p_1_to_int, i32 52, i32 62)
+
+ST_24: tmp_29 [1/1] 0.00ns
+_ifconv:2  %tmp_29 = trunc i64 %p_1_to_int to i52
+
+ST_24: notlhs2 [1/1] 2.11ns
+_ifconv:3  %notlhs2 = icmp ne i11 %tmp_28, -1
+
+ST_24: notrhs2 [1/1] 2.64ns
+_ifconv:4  %notrhs2 = icmp eq i52 %tmp_29, 0
+
+ST_24: tmp_30 [1/1] 0.00ns (grouped into LUT with out node sigma_1)
+_ifconv:5  %tmp_30 = or i1 %notrhs2, %notlhs2
+
+ST_24: tmp_31 [1/1] 6.82ns
+_ifconv:6  %tmp_31 = fcmp olt double %p_1, 0.000000e+00
+
+ST_24: tmp_32 [1/1] 0.00ns (grouped into LUT with out node sigma_1)
+_ifconv:7  %tmp_32 = and i1 %tmp_30, %tmp_31
+
+ST_24: sigma_1 [1/1] 1.37ns (out node of the LUT)
+_ifconv:8  %sigma_1 = select i1 %tmp_32, double -1.000000e+00, double 1.000000e+00
+
+ST_24: j_3 [1/1] 2.44ns
+_ifconv:41  %j_3 = add nsw i32 1, %j_1
+
+ST_24: tmp_21 [1/1] 2.52ns
+_ifconv:42  %tmp_21 = icmp sgt i32 %j_3, 60
+
+ST_24: tmp_10 [6/6] 7.79ns
+:0  %tmp_10 = fmul double %sign_factor, %ch_load_2
+
+ST_24: tmp_11 [6/6] 7.79ns
+:2  %tmp_11 = fmul double %sign_factor, %sh_load
+
+
+ <State 25>: 7.79ns
+ST_25: factor_1 [6/6] 7.79ns
+_ifconv:9  %factor_1 = fmul double %sigma_1, %poweroftwo_1
+
+ST_25: tmp_15 [6/6] 7.79ns
+_ifconv:14  %tmp_15 = fmul double %sigma_1, %angle1
+
+ST_25: angle_1 [6/6] 7.79ns
+_ifconv:43  %angle_1 = fmul double %angle1, 5.000000e-01
+
+
+ <State 26>: 7.79ns
+ST_26: factor_1 [5/6] 7.79ns
+_ifconv:9  %factor_1 = fmul double %sigma_1, %poweroftwo_1
+
+ST_26: tmp_15 [5/6] 7.79ns
+_ifconv:14  %tmp_15 = fmul double %sigma_1, %angle1
+
+ST_26: angle_1 [5/6] 7.79ns
+_ifconv:43  %angle_1 = fmul double %angle1, 5.000000e-01
+
+
+ <State 27>: 7.79ns
+ST_27: factor_1 [4/6] 7.79ns
+_ifconv:9  %factor_1 = fmul double %sigma_1, %poweroftwo_1
+
+ST_27: tmp_15 [4/6] 7.79ns
+_ifconv:14  %tmp_15 = fmul double %sigma_1, %angle1
+
+ST_27: angle_1 [4/6] 7.79ns
+_ifconv:43  %angle_1 = fmul double %angle1, 5.000000e-01
+
+
+ <State 28>: 7.79ns
+ST_28: factor_1 [3/6] 7.79ns
+_ifconv:9  %factor_1 = fmul double %sigma_1, %poweroftwo_1
+
+ST_28: tmp_15 [3/6] 7.79ns
+_ifconv:14  %tmp_15 = fmul double %sigma_1, %angle1
+
+ST_28: angle_1 [3/6] 7.79ns
+_ifconv:43  %angle_1 = fmul double %angle1, 5.000000e-01
+
+
+ <State 29>: 7.79ns
+ST_29: factor_1 [2/6] 7.79ns
+_ifconv:9  %factor_1 = fmul double %sigma_1, %poweroftwo_1
+
+ST_29: tmp_15 [2/6] 7.79ns
+_ifconv:14  %tmp_15 = fmul double %sigma_1, %angle1
+
+ST_29: angle_1 [2/6] 7.79ns
+_ifconv:43  %angle_1 = fmul double %angle1, 5.000000e-01
+
+
+ <State 30>: 7.79ns
+ST_30: factor_1 [1/6] 7.79ns
+_ifconv:9  %factor_1 = fmul double %sigma_1, %poweroftwo_1
+
+ST_30: tmp_15 [1/6] 7.79ns
+_ifconv:14  %tmp_15 = fmul double %sigma_1, %angle1
+
+ST_30: sel_tmp [1/1] 2.52ns
+_ifconv:32  %sel_tmp = icmp eq i32 %j_1, 40
+
+ST_30: sel_tmp1 [1/1] 2.52ns
+_ifconv:33  %sel_tmp1 = icmp eq i32 %j_1, 13
+
+ST_30: sel_tmp2 [1/1] 2.52ns
+_ifconv:34  %sel_tmp2 = icmp eq i32 %j_1, 4
+
+ST_30: tmp1 [1/1] 0.00ns (grouped into LUT with out node sel_tmp4)
+_ifconv:35  %tmp1 = or i1 %sel_tmp1, %sel_tmp2
+
+ST_30: sel_tmp4 [1/1] 1.37ns (out node of the LUT)
+_ifconv:36  %sel_tmp4 = or i1 %tmp1, %sel_tmp
+
+ST_30: angle_1 [1/6] 7.79ns
+_ifconv:43  %angle_1 = fmul double %angle1, 5.000000e-01
+
+ST_30: tmp_22 [1/1] 0.00ns
+_ifconv:44  %tmp_22 = zext i32 %j_1 to i64
+
+ST_30: angles_pos_addr [1/1] 0.00ns
+_ifconv:45  %angles_pos_addr = getelementptr inbounds [60 x double]* @angles_pos, i64 0, i64 %tmp_22
+
+ST_30: angle_2 [2/2] 2.39ns
+_ifconv:46  %angle_2 = load double* %angles_pos_addr, align 8
+
+
+ <State 31>: 8.23ns
+ST_31: tmp_13 [6/6] 7.79ns
+_ifconv:10  %tmp_13 = fmul double %factor_1, %sh_load
+
+ST_31: tmp_14 [6/6] 7.79ns
+_ifconv:12  %tmp_14 = fmul double %factor_1, %ch_load_2
+
+ST_31: beta_assign_1 [5/5] 8.23ns
+_ifconv:15  %beta_assign_1 = fsub double %p_1, %tmp_15
+
+ST_31: angle_2 [1/2] 2.39ns
+_ifconv:46  %angle_2 = load double* %angles_pos_addr, align 8
+
+ST_31: angle_3 [1/1] 1.37ns
+_ifconv:47  %angle_3 = select i1 %tmp_21, double %angle_1, double %angle_2
+
+
+ <State 32>: 8.23ns
+ST_32: tmp_13 [5/6] 7.79ns
+_ifconv:10  %tmp_13 = fmul double %factor_1, %sh_load
+
+ST_32: tmp_14 [5/6] 7.79ns
+_ifconv:12  %tmp_14 = fmul double %factor_1, %ch_load_2
+
+ST_32: beta_assign_1 [4/5] 8.23ns
+_ifconv:15  %beta_assign_1 = fsub double %p_1, %tmp_15
+
+
+ <State 33>: 8.23ns
+ST_33: tmp_13 [4/6] 7.79ns
+_ifconv:10  %tmp_13 = fmul double %factor_1, %sh_load
+
+ST_33: tmp_14 [4/6] 7.79ns
+_ifconv:12  %tmp_14 = fmul double %factor_1, %ch_load_2
+
+ST_33: beta_assign_1 [3/5] 8.23ns
+_ifconv:15  %beta_assign_1 = fsub double %p_1, %tmp_15
+
+
+ <State 34>: 8.23ns
+ST_34: tmp_13 [3/6] 7.79ns
+_ifconv:10  %tmp_13 = fmul double %factor_1, %sh_load
+
+ST_34: tmp_14 [3/6] 7.79ns
+_ifconv:12  %tmp_14 = fmul double %factor_1, %ch_load_2
+
+ST_34: beta_assign_1 [2/5] 8.23ns
+_ifconv:15  %beta_assign_1 = fsub double %p_1, %tmp_15
+
+
+ <State 35>: 8.23ns
+ST_35: tmp_13 [2/6] 7.79ns
+_ifconv:10  %tmp_13 = fmul double %factor_1, %sh_load
+
+ST_35: tmp_14 [2/6] 7.79ns
+_ifconv:12  %tmp_14 = fmul double %factor_1, %ch_load_2
+
+ST_35: beta_assign_1 [1/5] 8.23ns
+_ifconv:15  %beta_assign_1 = fsub double %p_1, %tmp_15
+
+
+ <State 36>: 8.20ns
+ST_36: tmp_13 [1/6] 7.79ns
+_ifconv:10  %tmp_13 = fmul double %factor_1, %sh_load
+
+ST_36: tmp_14 [1/6] 7.79ns
+_ifconv:12  %tmp_14 = fmul double %factor_1, %ch_load_2
+
+ST_36: beta_assign_1_to_int [1/1] 0.00ns
+_ifconv:16  %beta_assign_1_to_int = bitcast double %beta_assign_1 to i64
+
+ST_36: tmp_33 [1/1] 0.00ns
+_ifconv:17  %tmp_33 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %beta_assign_1_to_int, i32 52, i32 62)
+
+ST_36: tmp_34 [1/1] 0.00ns
+_ifconv:18  %tmp_34 = trunc i64 %beta_assign_1_to_int to i52
+
+ST_36: notlhs3 [1/1] 2.11ns
+_ifconv:19  %notlhs3 = icmp ne i11 %tmp_33, -1
+
+ST_36: notrhs3 [1/1] 2.64ns
+_ifconv:20  %notrhs3 = icmp eq i52 %tmp_34, 0
+
+ST_36: tmp_35 [1/1] 0.00ns (grouped into LUT with out node sigma_2)
+_ifconv:21  %tmp_35 = or i1 %notrhs3, %notlhs3
+
+ST_36: tmp_36 [1/1] 6.82ns
+_ifconv:22  %tmp_36 = fcmp olt double %beta_assign_1, 0.000000e+00
+
+ST_36: tmp_37 [1/1] 0.00ns (grouped into LUT with out node sigma_2)
+_ifconv:23  %tmp_37 = and i1 %tmp_35, %tmp_36
+
+ST_36: sigma_2 [1/1] 1.37ns (out node of the LUT)
+_ifconv:24  %sigma_2 = select i1 %tmp_37, double -1.000000e+00, double 1.000000e+00
+
+
+ <State 37>: 8.23ns
+ST_37: c2_1 [5/5] 8.23ns
+_ifconv:11  %c2_1 = fadd double %ch_load_2, %tmp_13
+
+ST_37: s2_1 [5/5] 8.23ns
+_ifconv:13  %s2_1 = fadd double %tmp_14, %sh_load
+
+ST_37: factor_2 [6/6] 7.79ns
+_ifconv:25  %factor_2 = fmul double %sigma_2, %poweroftwo_1
+
+ST_37: tmp_19 [6/6] 7.79ns
+_ifconv:30  %tmp_19 = fmul double %sigma_2, %angle1
+
+ST_37: poweroftwo_3 [6/6] 7.79ns
+_ifconv:40  %poweroftwo_3 = fmul double %poweroftwo_1, 5.000000e-01
+
+
+ <State 38>: 8.23ns
+ST_38: c2_1 [4/5] 8.23ns
+_ifconv:11  %c2_1 = fadd double %ch_load_2, %tmp_13
+
+ST_38: s2_1 [4/5] 8.23ns
+_ifconv:13  %s2_1 = fadd double %tmp_14, %sh_load
+
+ST_38: factor_2 [5/6] 7.79ns
+_ifconv:25  %factor_2 = fmul double %sigma_2, %poweroftwo_1
+
+ST_38: tmp_19 [5/6] 7.79ns
+_ifconv:30  %tmp_19 = fmul double %sigma_2, %angle1
+
+ST_38: poweroftwo_3 [5/6] 7.79ns
+_ifconv:40  %poweroftwo_3 = fmul double %poweroftwo_1, 5.000000e-01
+
+
+ <State 39>: 8.23ns
+ST_39: c2_1 [3/5] 8.23ns
+_ifconv:11  %c2_1 = fadd double %ch_load_2, %tmp_13
+
+ST_39: s2_1 [3/5] 8.23ns
+_ifconv:13  %s2_1 = fadd double %tmp_14, %sh_load
+
+ST_39: factor_2 [4/6] 7.79ns
+_ifconv:25  %factor_2 = fmul double %sigma_2, %poweroftwo_1
+
+ST_39: tmp_19 [4/6] 7.79ns
+_ifconv:30  %tmp_19 = fmul double %sigma_2, %angle1
+
+ST_39: poweroftwo_3 [4/6] 7.79ns
+_ifconv:40  %poweroftwo_3 = fmul double %poweroftwo_1, 5.000000e-01
+
+
+ <State 40>: 8.23ns
+ST_40: c2_1 [2/5] 8.23ns
+_ifconv:11  %c2_1 = fadd double %ch_load_2, %tmp_13
+
+ST_40: s2_1 [2/5] 8.23ns
+_ifconv:13  %s2_1 = fadd double %tmp_14, %sh_load
+
+ST_40: factor_2 [3/6] 7.79ns
+_ifconv:25  %factor_2 = fmul double %sigma_2, %poweroftwo_1
+
+ST_40: tmp_19 [3/6] 7.79ns
+_ifconv:30  %tmp_19 = fmul double %sigma_2, %angle1
+
+ST_40: poweroftwo_3 [3/6] 7.79ns
+_ifconv:40  %poweroftwo_3 = fmul double %poweroftwo_1, 5.000000e-01
+
+
+ <State 41>: 8.23ns
+ST_41: c2_1 [1/5] 8.23ns
+_ifconv:11  %c2_1 = fadd double %ch_load_2, %tmp_13
+
+ST_41: s2_1 [1/5] 8.23ns
+_ifconv:13  %s2_1 = fadd double %tmp_14, %sh_load
+
+ST_41: factor_2 [2/6] 7.79ns
+_ifconv:25  %factor_2 = fmul double %sigma_2, %poweroftwo_1
+
+ST_41: tmp_19 [2/6] 7.79ns
+_ifconv:30  %tmp_19 = fmul double %sigma_2, %angle1
+
+ST_41: poweroftwo_3 [2/6] 7.79ns
+_ifconv:40  %poweroftwo_3 = fmul double %poweroftwo_1, 5.000000e-01
+
+
+ <State 42>: 7.79ns
+ST_42: factor_2 [1/6] 7.79ns
+_ifconv:25  %factor_2 = fmul double %sigma_2, %poweroftwo_1
+
+ST_42: tmp_19 [1/6] 7.79ns
+_ifconv:30  %tmp_19 = fmul double %sigma_2, %angle1
+
+ST_42: poweroftwo_3 [1/6] 7.79ns
+_ifconv:40  %poweroftwo_3 = fmul double %poweroftwo_1, 5.000000e-01
+
+
+ <State 43>: 8.23ns
+ST_43: tmp_17 [6/6] 7.79ns
+_ifconv:26  %tmp_17 = fmul double %factor_2, %s2_1
+
+ST_43: tmp_18 [6/6] 7.79ns
+_ifconv:28  %tmp_18 = fmul double %factor_2, %c2_1
+
+ST_43: beta_assign_2 [5/5] 8.23ns
+_ifconv:31  %beta_assign_2 = fsub double %beta_assign_1, %tmp_19
+
+
+ <State 44>: 8.23ns
+ST_44: tmp_17 [5/6] 7.79ns
+_ifconv:26  %tmp_17 = fmul double %factor_2, %s2_1
+
+ST_44: tmp_18 [5/6] 7.79ns
+_ifconv:28  %tmp_18 = fmul double %factor_2, %c2_1
+
+ST_44: beta_assign_2 [4/5] 8.23ns
+_ifconv:31  %beta_assign_2 = fsub double %beta_assign_1, %tmp_19
+
+
+ <State 45>: 8.23ns
+ST_45: tmp_17 [4/6] 7.79ns
+_ifconv:26  %tmp_17 = fmul double %factor_2, %s2_1
+
+ST_45: tmp_18 [4/6] 7.79ns
+_ifconv:28  %tmp_18 = fmul double %factor_2, %c2_1
+
+ST_45: beta_assign_2 [3/5] 8.23ns
+_ifconv:31  %beta_assign_2 = fsub double %beta_assign_1, %tmp_19
+
+
+ <State 46>: 8.23ns
+ST_46: tmp_17 [3/6] 7.79ns
+_ifconv:26  %tmp_17 = fmul double %factor_2, %s2_1
+
+ST_46: tmp_18 [3/6] 7.79ns
+_ifconv:28  %tmp_18 = fmul double %factor_2, %c2_1
+
+ST_46: beta_assign_2 [2/5] 8.23ns
+_ifconv:31  %beta_assign_2 = fsub double %beta_assign_1, %tmp_19
+
+
+ <State 47>: 8.23ns
+ST_47: tmp_17 [2/6] 7.79ns
+_ifconv:26  %tmp_17 = fmul double %factor_2, %s2_1
+
+ST_47: tmp_18 [2/6] 7.79ns
+_ifconv:28  %tmp_18 = fmul double %factor_2, %c2_1
+
+ST_47: beta_assign_2 [1/5] 8.23ns
+_ifconv:31  %beta_assign_2 = fsub double %beta_assign_1, %tmp_19
+
+
+ <State 48>: 7.79ns
+ST_48: tmp_17 [1/6] 7.79ns
+_ifconv:26  %tmp_17 = fmul double %factor_2, %s2_1
+
+ST_48: tmp_18 [1/6] 7.79ns
+_ifconv:28  %tmp_18 = fmul double %factor_2, %c2_1
+
+ST_48: beta_assign_3 [1/1] 1.37ns
+_ifconv:39  %beta_assign_3 = select i1 %sel_tmp4, double %beta_assign_2, double %beta_assign_1
+
+
+ <State 49>: 8.23ns
+ST_49: c2_2 [5/5] 8.23ns
+_ifconv:27  %c2_2 = fadd double %c2_1, %tmp_17
+
+ST_49: s2_2 [5/5] 8.23ns
+_ifconv:29  %s2_2 = fadd double %tmp_18, %s2_1
+
+
+ <State 50>: 8.23ns
+ST_50: c2_2 [4/5] 8.23ns
+_ifconv:27  %c2_2 = fadd double %c2_1, %tmp_17
+
+ST_50: s2_2 [4/5] 8.23ns
+_ifconv:29  %s2_2 = fadd double %tmp_18, %s2_1
+
+
+ <State 51>: 8.23ns
+ST_51: c2_2 [3/5] 8.23ns
+_ifconv:27  %c2_2 = fadd double %c2_1, %tmp_17
+
+ST_51: s2_2 [3/5] 8.23ns
+_ifconv:29  %s2_2 = fadd double %tmp_18, %s2_1
+
+
+ <State 52>: 8.23ns
+ST_52: c2_2 [2/5] 8.23ns
+_ifconv:27  %c2_2 = fadd double %c2_1, %tmp_17
+
+ST_52: s2_2 [2/5] 8.23ns
+_ifconv:29  %s2_2 = fadd double %tmp_18, %s2_1
+
+
+ <State 53>: 8.23ns
+ST_53: c2_2 [1/5] 8.23ns
+_ifconv:27  %c2_2 = fadd double %c2_1, %tmp_17
+
+ST_53: s2_2 [1/5] 8.23ns
+_ifconv:29  %s2_2 = fadd double %tmp_18, %s2_1
+
+
+ <State 54>: 1.37ns
+ST_54: c2_3 [1/1] 1.37ns
+_ifconv:37  %c2_3 = select i1 %sel_tmp4, double %c2_2, double %c2_1
+
+ST_54: s2_3 [1/1] 1.37ns
+_ifconv:38  %s2_3 = select i1 %sel_tmp4, double %s2_2, double %s2_1
+
+ST_54: stg_286 [1/1] 0.00ns
+_ifconv:48  br label %.backedge
+
+
+ <State 55>: 7.79ns
+ST_55: tmp_10 [5/6] 7.79ns
+:0  %tmp_10 = fmul double %sign_factor, %ch_load_2
+
+ST_55: tmp_11 [5/6] 7.79ns
+:2  %tmp_11 = fmul double %sign_factor, %sh_load
+
+
+ <State 56>: 7.79ns
+ST_56: tmp_10 [4/6] 7.79ns
+:0  %tmp_10 = fmul double %sign_factor, %ch_load_2
+
+ST_56: tmp_11 [4/6] 7.79ns
+:2  %tmp_11 = fmul double %sign_factor, %sh_load
+
+
+ <State 57>: 7.79ns
+ST_57: tmp_10 [3/6] 7.79ns
+:0  %tmp_10 = fmul double %sign_factor, %ch_load_2
+
+ST_57: tmp_11 [3/6] 7.79ns
+:2  %tmp_11 = fmul double %sign_factor, %sh_load
+
+
+ <State 58>: 7.79ns
+ST_58: tmp_10 [2/6] 7.79ns
+:0  %tmp_10 = fmul double %sign_factor, %ch_load_2
+
+ST_58: tmp_11 [2/6] 7.79ns
+:2  %tmp_11 = fmul double %sign_factor, %sh_load
+
+
+ <State 59>: 7.79ns
+ST_59: tmp_10 [1/6] 7.79ns
+:0  %tmp_10 = fmul double %sign_factor, %ch_load_2
+
+ST_59: stg_296 [1/1] 0.00ns
+:1  call void @_ssdm_op_Write.ap_auto.doubleP(double* %ch, double %tmp_10) nounwind
+
+ST_59: tmp_11 [1/6] 7.79ns
+:2  %tmp_11 = fmul double %sign_factor, %sh_load
+
+ST_59: stg_298 [1/1] 0.00ns
+:3  call void @_ssdm_op_Write.ap_auto.doubleP(double* %sh, double %tmp_11) nounwind
+
+ST_59: stg_299 [1/1] 0.00ns
+:4  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

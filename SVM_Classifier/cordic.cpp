@@ -1,13 +1,9 @@
 //
 // Created by aurel on 10/02/2018.
 //
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-# include <cmath>
-# include <ctime>
+//# include <cmath>  //for pow function
 
-using namespace std;
+//using namespace std;
 
 # include "cordic.h"
 
@@ -116,7 +112,7 @@ void coshsinh_cordic ( double beta, int m, int n, double *ch, double *sh ) {
     *ch = 1;    //Initialize loop variables:
     *sh = 0;    //https://fr.wikipedia.org/wiki/CORDIC
 
-    poweroftwo = pow(2,-m-2);
+    poweroftwo = 0.0625; //pow(2,-m-2);
 
     for ( j = -m; j <= 0; j++ ) {
 

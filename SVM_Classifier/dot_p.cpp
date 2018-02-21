@@ -1,6 +1,6 @@
 #include "dot_p.h"
 
-#include <iostream>
+//#include <iostream>
 //int iteration=1;
 void dot_p (
   double *product,

@@ -1,0 +1,7 @@
+Running: xsim.dir/coshsinh_cordic/xsimk.exe -simmode gui -wdb coshsinh_cordic.wdb -simrunnum 0 -socket 50623
+Design successfully loaded
+Design Loading Memory Usage: 18324 KB (Peak: 18324 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 21840 KB (Peak: 21840 KB)
+Simulation CPU Usage: 8124 ms

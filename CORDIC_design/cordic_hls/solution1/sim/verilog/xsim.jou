@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Feb 21 03:24:27 2018
+# Process ID: 11912
+# Current directory: C:/Users/Stavros/Imperial/2ndTerm/ADSD/Part2/git_files/CORDIC_design/cordic_hls/solution1/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/coshsinh_cordic/xsim_script.tcl}
+# Log file: C:/Users/Stavros/Imperial/2ndTerm/ADSD/Part2/git_files/CORDIC_design/cordic_hls/solution1/sim/verilog/xsim.log
+# Journal file: C:/Users/Stavros/Imperial/2ndTerm/ADSD/Part2/git_files/CORDIC_design/cordic_hls/solution1/sim/verilog\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/coshsinh_cordic/xsim_script.tcl
+source coshsinh_cordic.tcl

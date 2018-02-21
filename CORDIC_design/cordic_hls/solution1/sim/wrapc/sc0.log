@@ -1,0 +1,5 @@
+   Build using "C:/Xilinx/Vivado_HLS/2016.2/msys/bin/g++.exe"
+   Compiling apatb_coshsinh_cordic.cpp
+   Compiling cordic.cpp_pre.cpp.tb.cpp
+   Compiling cordic_tb.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe

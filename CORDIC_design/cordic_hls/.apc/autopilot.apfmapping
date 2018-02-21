@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="cordic.cpp" path="C:\Users\Stavros\Imperial\2ndTerm\ADSD\Part2\git_files\CORDIC_design\cordic.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="cordic_tb.cpp" path="C:\Users\Stavros\Imperial\2ndTerm\ADSD\Part2\git_files\CORDIC_design\cordic_tb.cpp"/>
+    <originFiles name="out.gold.dat" path="C:\Users\Stavros\Imperial\2ndTerm\ADSD\Part2\git_files\CORDIC_design\out.gold.dat"/>
+    <originFiles name="in.gold.dat" path="C:\Users\Stavros\Imperial\2ndTerm\ADSD\Part2\git_files\CORDIC_design\in.gold.dat"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
