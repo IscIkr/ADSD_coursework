@@ -1,17 +1,22 @@
 #include "classifier.h"
 #include "cordic.h"
 #include "dot_p.h"
-#define POS_ITERATIONS 10
+#define POS_ITERATIONS 5
 #define NEG_ITERATIONS 2   //max value 10
 
 //#include <math.h>  //for tanh function
-//#include <iostream>
+#include <iostream>
+#include <algorithm>
 //int iteration = 0;
 int classifier (
     double a[NSV],
     double sv[NSV][N],
     double x[N],
-    double b
+    double b,
+    double *maxDP, double *minDP,
+    double *maxCH, double *minCH,
+    double *maxSH, double *minSH,
+    double *maxTH, double *minTH
     )
 {
     double f, dp, cosh, sinh, tanh_res;
@@ -25,6 +30,10 @@ int classifier (
         tanh_res = sinh/cosh;
         //tanh_res = tanh(2*dp);
         sum += a[i] * tanh_res;
+*minDP = std::min(*minDP,dp);       *maxDP = std::max(*maxDP,dp);
+*minCH = std::min(*minCH,cosh);     *maxCH = std::max(*maxCH,cosh);
+*minSH = std::min(*minSH,sinh);     *maxSH = std::max(*maxSH,sinh);
+*minTH = std::min(*minTH,tanh_res); *maxTH = std::max(*maxTH,tanh_res);
 //printf("SV = %d. Tanh = %f. Sum = %f\n", i+1, tanh_res, sum); //for debugging purposes
     }
     f = sum + b;
