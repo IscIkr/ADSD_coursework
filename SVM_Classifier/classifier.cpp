@@ -16,7 +16,9 @@ int classifier (
     double *maxDP, double *minDP,
     double *maxCH, double *minCH,
     double *maxSH, double *minSH,
-    double *maxTH, double *minTH
+    double *maxTH, double *minTH,
+    double *maxSum, double *minSum,
+    double *maxF, double *minF
     )
 {
     double f, dp, cosh, sinh, tanh_res;
@@ -34,9 +36,11 @@ int classifier (
 *minCH = std::min(*minCH,cosh);     *maxCH = std::max(*maxCH,cosh);
 *minSH = std::min(*minSH,sinh);     *maxSH = std::max(*maxSH,sinh);
 *minTH = std::min(*minTH,tanh_res); *maxTH = std::max(*maxTH,tanh_res);
+*minSum = std::min(*minSum,sum);    *maxSum = std::max(*maxSum,sum);
 //printf("SV = %d. Tanh = %f. Sum = %f\n", i+1, tanh_res, sum); //for debugging purposes
     }
     f = sum + b;
+*minF = std::min(*minF,f);       *maxF = std::max(*maxF,f);
 //printf("Sum = %f\n", f);
     return (f<0);   //less or great than???
 }

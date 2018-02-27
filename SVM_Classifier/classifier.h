@@ -13,7 +13,9 @@ int classifier (
   double *maxDP, double *minDP,
   double *maxCH, double *minCH,
   double *maxSH, double *minSH,
-  double *maxTH, double *minTH
+  double *maxTH, double *minTH,
+  double *maxSum, double *minSum,
+  double *maxF, double *minF
   );
 
 #endif
